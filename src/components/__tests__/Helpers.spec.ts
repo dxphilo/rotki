@@ -2,6 +2,7 @@ import {
   sumOfAllUserBalancesinUsd,
   percentageOfUserAsset,
   formatDate,
+  sumofUsdValues,
 } from "@/helpers";
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
@@ -52,8 +53,48 @@ describe("percentageOfUserAsset", () => {
 });
 
 describe("formatDate", () => {
-  it("Return human readable date format", () => {
+  it("Returns human readable date format", () => {
     const formattedDate = formatDate(1580940637);
     expect(formattedDate).toBe("Feb 6, 2020, 1:10:37");
+  });
+});
+
+describe("Calculates the sum of usd_values in  user events", () => {
+  it("Calculates and retunrs the the sum of usd_values", () => {
+    const data = {
+      address1: {
+        events: [
+          { value: { usd_value: "10.00" } },
+          { value: { usd_value: "5.00" } },
+        ],
+      },
+      address2: {
+        events: [
+          { value: { usd_value: "2.50" } },
+          { value: { usd_value: "7.50" } },
+        ],
+      },
+    };
+    const result = sumofUsdValues(data);
+    expect(result).toBe(25);
+  });
+
+  it("returns 0 when no events are provided", () => {
+    const data = {
+      address1: {
+        events: [],
+      },
+      address2: {
+        events: [],
+      },
+    };
+    const result = sumofUsdValues(data);
+    expect(result).toBe(0);
+  });
+
+  it("returns 0 when no data is provided", () => {
+    const data = {};
+    const result = sumofUsdValues(data);
+    expect(result).toBe(0);
   });
 });
