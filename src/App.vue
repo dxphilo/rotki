@@ -6,6 +6,7 @@ import { useRootStore } from "@/stores";
 
 const store = useRootStore();
 
+// trigger functions to fetch balances $ events
 onBeforeMount(async () => {
   store.fetchBalances();
   store.fetchEvents();
@@ -15,6 +16,6 @@ onBeforeMount(async () => {
 <template>
   <div class="bg-gray-100">
     <Header />
-    <RouterView />
+    <RouterView :key="$route.path" />
   </div>
 </template>
