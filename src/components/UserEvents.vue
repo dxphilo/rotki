@@ -18,10 +18,9 @@ const userEvents = computed(() => {
 </script>
 
 <template>
-  <main class="py-8">
+  <main class="py-4 h-screen">
     <!-- component -->
     <section class="antialiased text-gray-600 py-4 px-4">
-      <p class="text-xl text-center pb-6">User Account Events List</p>
       <div class="flex flex-col justify-center h-full">
         <!-- Table -->
         <div
