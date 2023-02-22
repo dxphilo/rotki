@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { AccountBalances, AccountEvents } from "@/types";
+import type { AccountBalances } from "@/types";
 
 export function sumOfAllUserBalancesinUsd(
   data: Record<string, AccountBalances>
@@ -15,7 +15,7 @@ export function sumOfAllUserBalancesinUsd(
   return totalUsdValue;
 }
 
-export function sumofUsdValues(data: Record<string, AccountEvents>): number {
+export function sumofUsdValues(data: any): number {
   let sum = 0;
   for (const address in data) {
     const events = data[address].events;

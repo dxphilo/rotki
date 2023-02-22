@@ -5,7 +5,7 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 // methods
-function getStyles(routename: string) {
+function getStyles(routename: string): string {
   let res = ``;
   if (route.name === routename) {
     res += ` text-gray-900 border-t-[2px] border-indigo-500`;
