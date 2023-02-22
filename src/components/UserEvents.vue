@@ -3,6 +3,7 @@ import EventDetails from "@/components/EventDetails.vue";
 
 import { useRootStore } from "@/stores";
 import { computed, ref } from "vue";
+import { sumofUsdValues } from "@/helpers";
 
 const store = useRootStore();
 const selectedAddress = ref<string>(``);
@@ -86,6 +87,32 @@ const userEvents = computed(() => {
                     :event="event"
                     :address="propertyName"
                   />
+                </tbody>
+                <tbody>
+                  <tr class="font-semibold text-gray-800">
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div class="">Total of user's Assets in (USD)</div>
+                      </div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="text-left"></div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div></div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div></div>
+                    </td>
+                    <td></td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="text-lg text-center">
+                        {{
+                          Number(sumofUsdValues(userEvents)).toLocaleString()
+                        }}
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
