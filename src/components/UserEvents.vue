@@ -3,6 +3,7 @@ import EventDetails from "@/components/EventDetails.vue";
 
 import { useRootStore } from "@/stores";
 import { computed, ref } from "vue";
+import { sumofUsdValues } from "@/helpers";
 
 const store = useRootStore();
 const selectedAddress = ref<string>(``);
@@ -18,10 +19,9 @@ const userEvents = computed(() => {
 </script>
 
 <template>
-  <main class="py-8">
+  <main class="py-4">
     <!-- component -->
     <section class="antialiased text-gray-600 py-4 px-4">
-      <p class="text-xl text-center pb-6">User Account Events List</p>
       <div class="flex flex-col justify-center h-full">
         <!-- Table -->
         <div
@@ -36,7 +36,7 @@ const userEvents = computed(() => {
             <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
-                class="bg-gray-200 py-1 rounded px-1 text-black"
+                class="bg-gray-200 text-gray-900 py-1 rounded px-1 text-black"
               >
                 <option value="">All Addresses</option>
                 <option
@@ -87,6 +87,32 @@ const userEvents = computed(() => {
                     :event="event"
                     :address="propertyName"
                   />
+                </tbody>
+                <tbody>
+                  <tr class="font-semibold text-gray-800">
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="flex items-center">
+                        <div class="">Total of user's Assets in (USD)</div>
+                      </div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="text-left"></div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div></div>
+                    </td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div></div>
+                    </td>
+                    <td></td>
+                    <td class="p-2 whitespace-nowrap">
+                      <div class="text-lg text-center">
+                        {{
+                          Number(sumofUsdValues(userEvents)).toLocaleString()
+                        }}
+                      </div>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>

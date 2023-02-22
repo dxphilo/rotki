@@ -6,7 +6,7 @@ Frontend application showcasing lists of assets with filter functionality, Build
 
 </div>
 
-![Gif showcasing the app](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExODBlNGYxYjA1NTg5N2IwYjBjMjVjNzg2YzA5NWUwODNlMWY2MDdhOSZjdD1n/BxxQlqdXkeGtJagdbS/giphy.gif)
+![task preview image ](../src/assets/task-preview.png)
 
 ## Recommended IDE Setup
 

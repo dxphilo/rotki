@@ -42,12 +42,12 @@ const props = withDefaults(
     </td>
     <td class="p-2 whitespace-nowrap">
       <div class="text-left font-medium text-green-500">
-        {{ event["value"]["amount"] }}
+        {{ Number(event["value"]["amount"]).toLocaleString() }}
       </div>
     </td>
     <td class="p-2 whitespace-nowrap">
       <div class="text-left font-medium text-gray-700">
-        {{ event["value"]["usd_value"] }}
+        {{ Number(event["value"]["usd_value"]).toLocaleString() }}
       </div>
     </td>
   </tr>

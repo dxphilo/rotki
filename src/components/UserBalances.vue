@@ -2,7 +2,7 @@
 import UserAsset from "@/components/UserAssets.vue";
 
 import { useRootStore } from "@/stores";
-import { computed, onBeforeMount, ref } from "vue";
+import { computed, ref } from "vue";
 import { sumOfAllUserBalancesinUsd } from "@/helpers";
 
 const store = useRootStore();
@@ -24,24 +24,16 @@ const totalSum = computed(() => {
   }
   return sumOfAllUserBalancesinUsd(store.$state.userBalances);
 });
-
-onBeforeMount(async () => {
-  store.fetchBalances();
-  store.fetchEvents();
-});
 </script>
 
 <template>
-  <main class="pt-20">
+  <main class="py-4 h-screen">
     <!-- component -->
     <section class="antialiased text-gray-600 py-3 px-4">
-      <p class="text-xl text-center pb-4">
-        Asset List with Amount, USD Value, and Percentage
-      </p>
       <div class="flex flex-col justify-center h-full">
         <!-- Table -->
         <div
-          class="w-full lg:w-3/5 mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
+          class="w-full lg:w-4/5 mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
         >
           <header
             class="px-5 py-4 border-b border-gray-100 flex justify-between lg:flex-row flex-col"
@@ -52,7 +44,7 @@ onBeforeMount(async () => {
             <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
-                class="bg-gray-200 py-1 rounded px-1 text-black"
+                class="bg-gray-200 text-gray-800 py-1 rounded px-1 text-black"
               >
                 <option value="">All Addresses</option>
                 <option
@@ -111,7 +103,11 @@ onBeforeMount(async () => {
                     </td>
                     <td class="p-2 whitespace-nowrap">
                       <div>
-                        {{ sumOfAllUserBalancesinUsd(userBalances) }}
+                        {{
+                          Number(
+                            sumOfAllUserBalancesinUsd(userBalances)
+                          ).toLocaleString()
+                        }}
                       </div>
                     </td>
                     <td class="p-2 whitespace-nowrap">

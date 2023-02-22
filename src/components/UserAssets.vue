@@ -28,7 +28,7 @@ const percentageScore = percentageOfUserAsset(
     </td>
     <td class="p-2 whitespace-nowrap">
       <div class="text-left font-medium text-green-500">
-        {{ props.token.usd_value }}
+        {{ Number(props.token.usd_value).toLocaleString() }}
       </div>
     </td>
     <td class="p-2 whitespace-nowrap">
@@ -42,7 +42,7 @@ const percentageScore = percentageOfUserAsset(
             : `text-indigo-700 bg-indigo-100`
         "
       >
-        {{ percentageScore }} %
+        {{ Number(percentageScore).toLocaleString() }} %
       </div>
     </td>
   </tr>

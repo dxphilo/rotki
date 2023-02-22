@@ -15,6 +15,18 @@ export function sumOfAllUserBalancesinUsd(
   return totalUsdValue;
 }
 
+export function sumofUsdValues(data: any): number {
+  let sum = 0;
+  for (const address in data) {
+    const events = data[address].events;
+    for (let i = 0; i < events.length; i++) {
+      const value = events[i].value;
+      sum += parseFloat(value.usd_value);
+    }
+  }
+  return sum;
+}
+
 export function errorHandler(error: unknown): void {
   if (error === null) throw new Error("Unrecoverable error!! Error is null!");
   if (axios.isAxiosError(error)) {
