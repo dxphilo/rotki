@@ -28,12 +28,12 @@ const userEvents = computed(() => {
           class="w-full lg:w-4/5 mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
         >
           <header
-            class="px-5 py-4 border-b border-gray-100 flex justify-between"
+            class="px-5 py-4 border-b border-gray-100 flex lg:flex-row flex-col justify-between"
           >
             <h2 class="font-semibold text-gray-800">
-              Select specific user event to display
+              Select specific account to display its Events
             </h2>
-            <div>
+            <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
                 class="bg-gray-200 py-1 rounded px-1 text-black"
