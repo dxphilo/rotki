@@ -18,7 +18,7 @@ const userEvents = computed(() => {
 </script>
 
 <template>
-  <main class="py-4 h-screen">
+  <main class="py-4">
     <!-- component -->
     <section class="antialiased text-gray-600 py-4 px-4">
       <div class="flex flex-col justify-center h-full">
@@ -35,7 +35,7 @@ const userEvents = computed(() => {
             <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
-                class="bg-gray-200 py-1 rounded px-1 text-black"
+                class="bg-gray-200 text-gray-900 py-1 rounded px-1 text-black"
               >
                 <option value="">All Addresses</option>
                 <option

@@ -44,7 +44,7 @@ const totalSum = computed(() => {
             <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
-                class="bg-gray-200 py-1 rounded px-1 text-black"
+                class="bg-gray-200 text-gray-800 py-1 rounded px-1 text-black"
               >
                 <option value="">All Addresses</option>
                 <option

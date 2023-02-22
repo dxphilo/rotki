@@ -5,9 +5,9 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 // methods
-function getStyles(tab: string) {
+function getStyles(routename: string) {
   let res = ``;
-  if (route.name === tab) {
+  if (route.name === routename) {
     res += ` text-gray-900 border-t-[2px] border-indigo-500`;
     return res;
   }
@@ -17,12 +17,12 @@ function getStyles(tab: string) {
 
 <template>
   <div
-    class="w-full lg:w-4/5 mx-auto border-t border-gray-200 pt-20 text-xl text-gray-500"
+    class="w-full lg:w-4/5 lg:mx-auto border-t border-gray-200 pt-20 text-sm lg:text-base text-gray-500"
   >
     <div class="flex">
       <router-link
         :to="'/'"
-        class="block flex-1 text-center text-base hover:text-gray-800 font-medium px-3 group"
+        class="block flex-1 text-center hover:text-gray-800 font-medium px-3 group"
       >
         <div
           class="flex items-center justify-center py-4"
@@ -35,7 +35,7 @@ function getStyles(tab: string) {
 
       <router-link
         :to="'/events'"
-        class="block flex-1 text-center text-base hover:text-gray-800 font-medium px-3 group"
+        class="block flex-1 text-center hover:text-gray-800 font-medium px-3 group"
       >
         <div
           class="flex items-center justify-center py-4"
