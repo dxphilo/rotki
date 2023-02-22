@@ -6,7 +6,7 @@ Frontend application showcasing lists of assets with filter functionality, Build
 
 </div>
 
-![task preview image ](../src/assets/task-preview.png)
+![task preview image ](./src/assets/task-preview.png)
 
 ## Recommended IDE Setup
 
