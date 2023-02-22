@@ -19,7 +19,7 @@ export const useRootStore = defineStore("rootStore", {
         const data = await response.data.result;
         this.userBalances = data;
       } catch (error: unknown) {
-        // handle various possible errors
+        // handle possible errors
         errorHandler(error);
       }
     },
@@ -29,10 +29,9 @@ export const useRootStore = defineStore("rootStore", {
           responseType: "json",
         });
         const data = await response.data.result;
-        console.log(data);
         this.userEvents = data;
       } catch (error: unknown) {
-        // handle various possible errors
+        // handle possible errors
         errorHandler(error);
       }
     },

@@ -21,11 +21,11 @@ export interface token {
 export interface AccountEvent {
   asset: string;
   event_type: string;
+  timestamp: number;
   value: {
     amount: string;
     usd_value: string;
   };
-  timestamp: number;
 }
 
 export interface AccountEvents {
@@ -33,10 +33,3 @@ export interface AccountEvents {
     events: AccountEvent[];
   };
 }
-
-export type dateString = (
-  date: Date,
-  hideYear?: boolean,
-  preformattedDate?: string | null,
-  onlyDate?: boolean
-) => string;

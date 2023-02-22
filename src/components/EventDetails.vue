@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { formatDate } from "@/helpers";
+import type {} from "@/types";
 
 const props = withDefaults(
   defineProps<{
     event: object;
-    address: unknown;
+    address: string;
   }>(),
   {}
 );

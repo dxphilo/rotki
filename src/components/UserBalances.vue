@@ -44,12 +44,12 @@ onBeforeMount(async () => {
           class="w-full lg:w-3/5 mx-auto bg-white shadow-lg rounded-sm border border-gray-200"
         >
           <header
-            class="px-5 py-4 border-b border-gray-100 flex justify-between"
+            class="px-5 py-4 border-b border-gray-100 flex justify-between lg:flex-row flex-col"
           >
             <h2 class="font-semibold text-gray-800">
               Select specific account to display
             </h2>
-            <div>
+            <div class="lg:py-0 py-3">
               <select
                 v-model="selectedAddress"
                 class="bg-gray-200 py-1 rounded px-1 text-black"
@@ -100,19 +100,17 @@ onBeforeMount(async () => {
                   />
                 </tbody>
                 <tbody>
-                  <tr>
+                  <tr class="font-semibold text-gray-800">
                     <td class="p-2 whitespace-nowrap">
                       <div class="flex items-center">
-                        <div class="font-medium text-gray-800">
-                          Total of user's Assets in (USD) :
-                        </div>
+                        <div class="">Total of user's Assets in (USD)</div>
                       </div>
                     </td>
                     <td class="p-2 whitespace-nowrap">
                       <div class="text-left"></div>
                     </td>
                     <td class="p-2 whitespace-nowrap">
-                      <div class="text-left font-medium">
+                      <div>
                         {{ sumOfAllUserBalancesinUsd(userBalances) }}
                       </div>
                     </td>
